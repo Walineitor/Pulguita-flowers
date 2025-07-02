@@ -67,8 +67,7 @@
     </style>
 </head>
 <body>
-    <!-- Audio que se reproduce automáticamente -->
-    <audio autoplay loop>
+    <audio id="musica" autoplay loop>
         <source src="audio/flores.mp3" type="audio/mpeg">
         Tu navegador no soporta la reproducción de audio.
     </audio>
@@ -78,5 +77,15 @@
         <h2>Tengo un regalo para ti✍(◔◡◔)</h2>
         <button onclick="window.location.href='rosas.html'">Ver regalo☞💛</button>
     </div>
+
+    <script>
+        // Reproducir música al primer clic
+        document.addEventListener('click', () => {
+            const audio = document.getElementById("musica");
+            if (audio) {
+                audio.play().catch(e => console.log("Autoplay bloqueado por el navegador", e));
+            }
+        });
+    </script>
 </body>
 </html>
