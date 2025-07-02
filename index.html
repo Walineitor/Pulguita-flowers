@@ -5,7 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PARA LA PULGA🫰🏼</title>
     <style>
-        body, html {
+        body, html {<audio id="musica" src="assets/audio/musica.mp3"></audio>
+
+<script>
+  document.body.addEventListener("click", function () {
+    const musica = document.getElementById("musica");
+    musica.play();
+  });
+</script>
+
             margin: 0;
             padding: 0;
             height: 100%;
