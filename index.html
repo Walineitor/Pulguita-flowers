@@ -1,91 +1,78 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PARA LA PULGA🫰🏼</title>
-    <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background: url('imagen/patrona.png') no-repeat center center/cover;
-            font-family: 'Arial', sans-serif;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PARA LA PULGA🫰🏼</title>
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: url('imagen/patrona.png') no-repeat center center/cover;
+      font-family: 'Arial', sans-serif;
+    }
 
-        h1, h2 {
-            color: fuchsia;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            text-align: center;
-        }
+    h1, h2 {
+      color: fuchsia;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+      text-align: center;
+    }
 
-        h1 {
-            font-size: 8vw;
-            animation: fadeInOut 3s infinite;
-        }
+    h1 {
+      font-size: 8vw;
+      animation: fadeInOut 3s infinite;
+    }
 
-        h2 {
-            font-size: 4vw;
-            margin-top: 20px;
-            animation: pulse 2s infinite;
-        }
+    h2 {
+      font-size: 4vw;
+      margin-top: 20px;
+      animation: pulse 2s infinite;
+    }
 
-        button {
-            font-size: 3vw;
-            padding: 15px 30px;
-            margin-top: 30px;
-            border: none;
-            margin-left: 200px;
-            background-color: #ff3366;
-            color: white;
-            cursor: pointer;
-            border-radius: 50px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
-        }
+    button {
+      font-size: 3vw;
+      padding: 15px 30px;
+      margin-top: 30px;
+      border: none;
+      margin-left: 200px;
+      background-color: #ff3366;
+      color: white;
+      cursor: pointer;
+      border-radius: 50px;
+      box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+    }
 
-        @keyframes fadeInOut {
-            0%, 100% {
-                opacity: 0.8;
-            }
-            50% {
-                opacity: 1;
-            }
-        }
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0.8; }
+      50% { opacity: 1; }
+    }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
-    </style>
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+  </style>
 </head>
 <body>
-    <audio id="musica" autoplay loop>
-        <source src="audio/flores.mp3" type="audio/mpeg">
-        Tu navegador no soporta la reproducción de audio.
-    </audio>
+  <div>
+    <h1>PARA LA PULGA(●'◡'●)💕</h1>
+    <h2>Tengo un regalo para ti✍(◔◡◔)</h2>
+    <button onclick="reproducirMusica()">Ver regalo☞💛</button>
+  </div>
 
-    <div>
-        <h1>PARA LA PULGA(●'◡'●)💕</h1>
-        <h2>Tengo un regalo para ti✍(◔◡◔)</h2>
-        <button onclick="window.location.href='rosas.html'">Ver regalo☞💛</button>
-    </div>
-
-    <script>
-        // Reproducir música al primer clic
-        document.addEventListener('click', () => {
-            const audio = document.getElementById("musica");
-            if (audio) {
-                audio.play().catch(e => console.log("Autoplay bloqueado por el navegador", e));
-            }
-        });
-    </script>
+  <script>
+    function reproducirMusica() {
+      const audio = new Audio('audio/flores.mp3');
+      audio.play();
+      setTimeout(() => {
+        window.location.href = 'rosas.html';
+      }, 100); // Espera breve para que empiece el sonido
+    }
+  </script>
 </body>
 </html>
